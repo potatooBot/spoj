@@ -28,8 +28,7 @@ prime[1]=false;
     }
     public static void segmentedSieve(int left,int right,ArrayList<Integer> primeValues){
         int dummy[]=new int[right-left +1];
-dummy[1]=0;
-dummy[0]=0;
+
         Arrays.fill(dummy,1);
 
 
@@ -46,14 +45,16 @@ dummy[0]=0;
 dummy[i-left]=0;
             }
         }
-
+long ans=1;
+        int mod=1000000007;
         for (int i = left; i <=right ; i++) {
             if(dummy[i-left]==1){
                 if(i==1) continue;
                 System.out.println(i);
+           ans=(ans*i)%mod;
             }
         }
-
+        System.out.println(ans);
     }
 
     public static void main(String[] args) {
